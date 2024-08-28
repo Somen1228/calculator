@@ -1,0 +1,31 @@
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.buttons {
+    width: 4rem;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: 600;
+    color: white;
+    background: #1b263b;
+
+    &:hover {
+        background: #273652;
+    }
+}
+
+.add {
+   height: 100%;
+   grid-row: span 2;
+}
+
+.func {
+    background: #284866;
+
+    &:hover {
+        background: #345779;
+    }
+}
