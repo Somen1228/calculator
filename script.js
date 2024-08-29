@@ -52,13 +52,11 @@ function updateExpression(input) {
 
 function evaluateExpression() {
   let expression = expressionField.innerText;
-  console.log(expression);
 
   // Check if the expression ends with an operator and remove it
   while (operators.includes(expression.slice(-1))) {
     expression = expression.slice(0, -1);
   }
-  console.log(expression);
 
   // Evaluate the cleaned expression
   let val;
@@ -86,15 +84,18 @@ function evaluateExpression() {
 }
 
 function clearExpression() {
-  // Reset the expression field value and content
-  expressionFieldValue = "";
-  expressionField.innerText = "0";
+
+  const lengthToRemove = expressionFieldValue.length;
 
   // Remove the last value or operator from the history
-  const lastIndex = historyVal.lastIndexOf(" ");
-  if (lastIndex !== -1) {
-    historyVal = historyVal.slice(0, lastIndex);
+  if(expressionFieldValue.slice(0, 1) == "0") {
+    historyVal = historyVal.slice(0, -(lengthToRemove-1));
+  } else {
+    historyVal = historyVal.slice(0, -(lengthToRemove+1));
   }
+  // Reset the expression field value and content
+  expressionFieldValue = "0"; // Reset the expression field
+  expressionField.innerText = expressionFieldValue; // Reset the expression field
 
   // Update the history field with the updated history value
   historyField.innerText = historyVal;
@@ -109,7 +110,6 @@ function clearAllData() {
 }
 
 function handleBackspace() {
-  console.log("Expression Length:", expressionFieldValue.length);
 
   if (expressionFieldValue.length === 1 && expressionFieldValue !== "0") {
     expressionFieldValue = "0";
@@ -119,8 +119,6 @@ function handleBackspace() {
     let i = length - 1;
     
     while (!operators.includes(historyVal.charAt(i)) && i > 0) {
-        console.log("inside loop");
-        
       historyVal = historyVal.slice(0, -1);
       historyField.innerText = historyVal;
       console.log("Func updates: ", historyVal);
@@ -132,9 +130,6 @@ function handleBackspace() {
     historyField.innerText = historyVal;
     
   } else if(expressionFieldValue !== "0" && expressionFieldValue !== ""){
-    console.log("inside else");
-    console.log(expressionFieldValue);
-    
     expressionFieldValue = expressionFieldValue.slice(0, -1);
     expressionField.innerText = expressionFieldValue;
     historyVal = historyVal.slice(0, -1);
