@@ -73,7 +73,11 @@ function evaluateExpression() {
   if (val !== undefined) {
     expressionFieldValue = "0"; // Reset the expression field
     expressionField.innerText = expressionFieldValue; // Reset the expression field
-    display.innerText = String(val).slice(0, 10); // Show the result
+    if(String(val).includes(".")) {
+        display.innerText = String(val).slice(0, 10); // Show the result
+    } else {
+        display.innerText = val; // Show the result
+    }
     answer = Number(val); // Update the answer
     lastInputWasOperator = false; // Reset the operator flag
 
