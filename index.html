@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,32 +12,33 @@
 
     <div id="calculator" class="w-full h-[100vh] flex justify-center items-center bg-slate-700">
         <div id="calc-body" class="w-[22rem] h-[32rem] pt-5 bg-[#161d2b] flex flex-col gap-5  items-center rounded-sm shadow-bottom-left z-10">
-            <div class="h-24 w-[20rem] border-2 border-slate-600 flex justify-end items-end p-2">
-                <h1 id="display" class="text-white font-bold text-4xl">0</h1>
+            <div class="h-24 w-[20rem] border-2 border-slate-600 flex flex-col justify-between items-end p-2">
+                <p id="eval-history" class="text-sm text-gray-500"></p>
+                <h1 id="display" class="text-zinc-300 font-bold text-4xl">0</h1>
             </div>
             <div class="bg-[#161d2b] h-10 w-[20rem] flex justify-end items-end pt-2 pr-2 border-2 border-slate-600">
                 <h3 id="expression" class="text-zinc-500 font-semibold text-xl">0</h3>
             </div>
             <div class="btns-area w-[20rem] h-76 bg-[#161d2b] grid grid-cols-4 gap-2 items-center justify-items-center">
-                <button class="func-btn ce">CE</button>
-                <button class="func-btn cancel">C</button>
-                <button class="buttons func percentage">%</button>
-                <button class="buttons func division">/</button>
-                <button class="buttons seven">7</button>
-                <button class="buttons eight">8</button>
-                <button class="buttons nine">9</button>
-                <button class="buttons func multiply">*</button>
-                <button class="buttons four">4</button>
-                <button class="buttons five">5</button>
-                <button class="buttons six">6</button>
-                <button class="buttons func subtract">-</button>
-                <button class="buttons one">1</button>
-                <button class="buttons two">2</button>
-                <button class="buttons three">3</button>
-                <button class="buttons func add">+</button>
-                <button class="buttons zero">0</button>
+                <button class="func-btn clear-all">CE</button>
+                <button class="func-btn clear">C</button>
+                <button class="action-btn backspace"><i class="fa-solid fa-delete-left"></i></button>
+                <button class="buttons action-btn division">/</button>
+                <button class="buttons numbers seven">7</button>
+                <button class="buttons numbers eight">8</button>
+                <button class="buttons numbers nine">9</button>
+                <button class="buttons action-btn multiply">*</button>
+                <button class="buttons numbers four">4</button>
+                <button class="buttons numbers five">5</button>
+                <button class="buttons numbers six">6</button>
+                <button class="buttons action-btn subtract">-</button>
+                <button class="buttons numbers one">1</button>
+                <button class="buttons numbers two">2</button>
+                <button class="buttons numbers three">3</button>
+                <button class="buttons action-btn add">+</button>
+                <button class="buttons numbers zero">0</button>
                 <button class="buttons decimal">.</button>
-                <button class="buttons func-btn equals">=</button>
+                <button class="func-btn equals">=</button>
             </div>
     </div>
     <script src="script.js"></script>

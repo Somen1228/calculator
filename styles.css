@@ -17,7 +17,7 @@
     }
 }
 
-.func, .func-btn {
+.action-btn, .func-btn {
     width: 4rem;
     height: 3rem;
     border-radius: 5px;
