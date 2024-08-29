@@ -17,15 +17,21 @@
     }
 }
 
-.add {
-   height: 100%;
-   grid-row: span 2;
-}
-
-.func {
+.func, .func-btn {
+    width: 4rem;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: 600;
+    color: white;
     background: #284866;
 
     &:hover {
         background: #345779;
     }
 }
+
+.add {
+    height: 100%;
+    grid-row: span 2;
+ }

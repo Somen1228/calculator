@@ -4,7 +4,11 @@ module.exports = {
       './*.js',   // This will scan all JS files in your project
     ],
     theme: {
-      extend: {},
+      extend: {
+        boxShadow: {
+            'bottom-left': '-7px 7px 10px rgba(0, 0, 0, 0.4)',
+        }
+      },
     },
     plugins: [],
   };
