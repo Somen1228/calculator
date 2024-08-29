@@ -8,7 +8,7 @@ module.exports = {
         boxShadow: {
             'bottom-left': '-7px 7px 10px rgba(0, 0, 0, 0.4)',
         }
-      },
+      }
     },
     plugins: [],
   };
