@@ -32,6 +32,10 @@
   }
 }
 
+.clear-all {
+    background: #792828;
+}
+
 .add {
   height: 100%;
   grid-row: span 2;

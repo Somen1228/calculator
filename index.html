@@ -7,33 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Horizontal scrollbar styles
-        #eval-history, #expression, #display {
-            overflow-x: auto;
-            white-space: nowrap;
-            scrollbar-width: thin;
-            scrollbar-color: #4a5568 #1a202c;
-        }
-
-        #eval-history::-webkit-scrollbar, #expression::-webkit-scrollbar, #display::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        #eval-history::-webkit-scrollbar-thumb, #expression::-webkit-scrollbar-thumb, #expression::-webkit-scrollbar-thumb {
-            background-color: #4a5568;
-            border-radius: 10px;
-        }
-
-        #eval-history::-webkit-scrollbar-track, #expression::-webkit-scrollbar-track, #expression::-webkit-scrollbar-track {
-            background-color: #1a202c;
-        } */
-    </style>
 </head>
 <body>
 
     <div id="calculator" class="w-full h-[100vh] flex justify-center items-center bg-slate-700">
-        <div id="calc-body" class="w-[22rem] h-[32rem] pt-5 bg-[#161d2b] flex flex-col gap-5 items-center rounded-sm shadow-bottom-left z-10">
+        <div id="calc-body" class="w-[22rem] h-[32rem] pt-5 bg-[#161d2b] flex flex-col gap-5 items-center rounded-xl shadow-bottom-left z-10">
             <div class="h-28 w-[20rem] flex flex-col align-bottom ">
                 <h3 id="eval-history" class="h-[30%] pt-2 pr-2 w-full text-sm text-end text-gray-500 overflow-x-scroll"></p>
                 <h3 id="display" class="h-[70%] pt-5 pl-2 w-full text-zinc-300 font-bold text-5xl">0</h1>
