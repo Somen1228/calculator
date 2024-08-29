@@ -51,32 +51,36 @@ function updateExpression(input) {
 }
 
 function evaluateExpression() {
-  let expression = expressionField.innerText;
+  let expression = expressionFieldValue;
 
   // Check if the expression ends with an operator and remove it
   while (operators.includes(expression.slice(-1))) {
     expression = expression.slice(0, -1);
   }
-
+  
+  if (expression.slice(0, 1) == "0") {
+    expression = expression.slice(1, expression.length);
+  }
+  
   // Evaluate the cleaned expression
   let val;
   try {
     if (answer != 0) {
       expression = String(answer) + expression;
     }
+    
     val = eval(expression);
   } catch (error) {
-    console.log("Error evaluating expression", error);
     val = "Error";
   }
 
   if (val !== undefined) {
     expressionFieldValue = "0"; // Reset the expression field
     expressionField.innerText = expressionFieldValue; // Reset the expression field
-    if(String(val).includes(".")) {
-        display.innerText = String(val).slice(0, 10); // Show the result
+    if (String(val).includes(".")) {
+      display.innerText = String(val).slice(0, 10); // Show the result
     } else {
-        display.innerText = val; // Show the result
+      display.innerText = val; // Show the result
     }
     answer = Number(val); // Update the answer
     lastInputWasOperator = false; // Reset the operator flag
@@ -88,14 +92,13 @@ function evaluateExpression() {
 }
 
 function clearExpression() {
-
   const lengthToRemove = expressionFieldValue.length;
 
   // Remove the last value or operator from the history
-  if(expressionFieldValue.slice(0, 1) == "0") {
-    historyVal = historyVal.slice(0, -(lengthToRemove-1));
+  if (expressionFieldValue.slice(0, 1) == "0") {
+    historyVal = historyVal.slice(0, -(lengthToRemove - 1));
   } else {
-    historyVal = historyVal.slice(0, -(lengthToRemove+1));
+    historyVal = historyVal.slice(0, -(lengthToRemove + 1));
   }
   // Reset the expression field value and content
   expressionFieldValue = "0"; // Reset the expression field
@@ -114,26 +117,22 @@ function clearAllData() {
 }
 
 function handleBackspace() {
-
   if (expressionFieldValue.length === 1 && expressionFieldValue !== "0") {
     expressionFieldValue = "0";
     expressionField.innerText = expressionFieldValue;
 
     const length = historyVal.length;
     let i = length - 1;
-    
+
     while (!operators.includes(historyVal.charAt(i)) && i > 0) {
       historyVal = historyVal.slice(0, -1);
       historyField.innerText = historyVal;
-      console.log("Func updates: ", historyVal);
-
       i--;
     }
 
     historyVal = historyVal.slice(0, -1);
     historyField.innerText = historyVal;
-    
-  } else if(expressionFieldValue !== "0" && expressionFieldValue !== ""){
+  } else if (expressionFieldValue !== "0" && expressionFieldValue !== "") {
     expressionFieldValue = expressionFieldValue.slice(0, -1);
     expressionField.innerText = expressionFieldValue;
     historyVal = historyVal.slice(0, -1);
@@ -144,7 +143,7 @@ function handleBackspace() {
 function handleKeyDown(e) {
   if ((e.key >= "0" && e.key <= "9") || e.key === ".") {
     updateExpression(e.key);
-  } else if (["+", "-", "*", "/"].includes(e.key)) {
+  } else if (operators.includes(e.key)) {
     updateExpression(e.key);
   } else if (e.key === "Enter" || e.key === "=") {
     evaluateExpression();
