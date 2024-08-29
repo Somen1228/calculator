@@ -44,7 +44,8 @@ function updateExpression(input) {
 
 function evaluateExpression() {
     let expression = expressionField.innerText;
-
+    console.log(expression);
+    
     // Check if the expression ends with an operator and remove it
     const operators = ['+', '-', '*', '/'];
     while (operators.includes(expression.slice(-1))) {
@@ -55,7 +56,9 @@ function evaluateExpression() {
     // Evaluate the cleaned expression
     let val;
     try {
-        expression = String(answer) + expression;
+        if(answer != 0) {
+            expression = String(answer) + expression;
+        } 
         val = eval(expression)
     } catch (error) {
         console.log('Error evaluating expression', error);
