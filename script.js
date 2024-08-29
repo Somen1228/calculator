@@ -68,7 +68,7 @@ function evaluateExpression() {
     if (val !== undefined) {
         expressionFieldValue = ""; // Reset the expression field
         expressionField.innerText = "0"; // Reset the expression field
-        display.innerText = val; // Show the result
+        display.innerText = String(val).slice(0, 10); // Show the result
         answer = Number(val); // Update the answer
         lastInputWasOperator = false; // Reset the operator flag
 
