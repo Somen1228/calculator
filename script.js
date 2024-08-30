@@ -187,6 +187,8 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
         setTheme('solarized-theme');
     } else if (currentTheme === 'solarized-theme') {
         setTheme('beige-theme');
+    } else if (currentTheme === 'beige-theme') {
+        setTheme('barbie-theme');
     } else {
         setTheme('light-theme');
     }

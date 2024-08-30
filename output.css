@@ -817,6 +817,29 @@ video {
   --beam-color: rgba(150, 100, 200, 0.5);
 }
 
+.barbie-theme {
+  --bg-color: #fce4ec;
+  /* Light pink background */
+  --calc-body-color: #f8bbd0;
+  /* Slightly darker pink for the calculator body */
+  --text-color: #880e4f;
+  /* Dark pink text color */
+  --btn-bg: #f48fb1;
+  /* Pink buttons */
+  --btn-hover-bg: #f06292;
+  /* Darker pink on hover */
+  --action-btn-bg: #ec407a;
+  /* Bright pink for action buttons */
+  --action-btn-hover-bg: #d81b60;
+  /* Darker pink on hover */
+  --clear-all-bg: #e91e63;
+  /* Vibrant pink for the "Clear All" button */
+  --clear-all-hover-bg: #c2185b;
+  /* Darker pink on hover */
+  --beam-color: rgba(255, 105, 180, 0.5);
+  /* Light pink beam color */
+}
+
 /* Applying theme variables */
 
 body {

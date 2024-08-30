@@ -33,7 +33,7 @@
 /* Solarized Theme */
 .solarized-theme {
   --bg-color: #002b36;
-  --calc-body-color: #093e4b; 
+  --calc-body-color: #093e4b;
   --text-color: #ffffffd3;
   --btn-bg: #586e75;
   --btn-hover-bg: #455a63;
@@ -56,6 +56,19 @@
   --clear-all-bg: #d33682;
   --clear-all-hover-bg: #bf4a8d;
   --beam-color: rgba(150, 100, 200, 0.5);
+}
+
+.barbie-theme {
+  --bg-color: #fce4ec; /* Light pink background */
+  --calc-body-color: #f8bbd0; /* Slightly darker pink for the calculator body */
+  --text-color: #880e4f; /* Dark pink text color */
+  --btn-bg: #f48fb1; /* Pink buttons */
+  --btn-hover-bg: #f06292; /* Darker pink on hover */
+  --action-btn-bg: #ec407a; /* Bright pink for action buttons */
+  --action-btn-hover-bg: #d81b60; /* Darker pink on hover */
+  --clear-all-bg: #e91e63; /* Vibrant pink for the "Clear All" button */
+  --clear-all-hover-bg: #c2185b; /* Darker pink on hover */
+  --beam-color: rgba(255, 105, 180, 0.5); /* Light pink beam color */
 }
 
 /* Applying theme variables */
@@ -81,39 +94,39 @@ body {
 }
 
 .doodle-alert {
-    position: absolute;
-    z-index: 200;
-    bottom: 5%;
-    left: 50%;
-    width: 15rem;
-    transform: translateX(-50%);
-    background: #fff;
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s, visibility 0.5s;
-    animation: doodle 1s ease-in-out 0s 1;
+  position: absolute;
+  z-index: 200;
+  bottom: 5%;
+  left: 50%;
+  width: 15rem;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  animation: doodle 1s ease-in-out 0s 1;
 }
 
 @keyframes doodle {
-    0% {
-        transform: translateX(-50%) scale(0.8);
-        opacity: 0;
-    }
-    50% {
-        transform: translateX(-50%) scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-50%) scale(1);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes beam-animation {
