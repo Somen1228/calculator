@@ -747,8 +747,16 @@ video {
   font-weight: 600;
 }
 
+.font-medium {
+  font-weight: 500;
+}
+
 .tracking-wider {
   letter-spacing: 0.05em;
+}
+
+.opacity-60 {
+  opacity: 0.6;
 }
 
 .shadow-bottom-left {
