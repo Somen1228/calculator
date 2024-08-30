@@ -692,6 +692,10 @@ video {
   border-radius: 0.75rem;
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -712,8 +716,16 @@ video {
   padding-top: 1.25rem;
 }
 
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
 .text-end {
   text-align: end;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-5xl {
@@ -743,12 +755,12 @@ video {
   font-weight: 700;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .tracking-wider {
@@ -878,14 +890,10 @@ body {
   left: 50%;
   width: 15rem;
   transform: translateX(-50%);
-  background: #fff;
   color: #333;
   padding: 10px 20px;
-  border-radius: 15px;
   font-size: 12px;
   font-weight: bold;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s, visibility 0.5s;
