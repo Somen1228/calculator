@@ -17,6 +17,7 @@ let lastInputWasOperator = false;
 const operators = ["+", "-", "*", "/"];
 
 // Functions
+// Numbers operators Decimal
 function updateExpression(input) {
   if (!isNaN(input) || input === ".") {
     // Check if input is a number or decimal point
@@ -24,22 +25,23 @@ function updateExpression(input) {
       expressionFieldValue = ""; // Reset if the display is "0"
     }
 
-    if (
-      display.innerText !== "0" &&
-      !lastInputWasOperator &&
-      expressionFieldValue === ""
-    ) {
+    if (display.innerText !== "0" && !lastInputWasOperator && expressionFieldValue === "") {   
       historyVal += `+${input}`;
+      expressionFieldValue += `+${input}`;
     } else {
       historyVal += input;
+      expressionFieldValue += input;
     }
 
-    expressionFieldValue += input;
     lastInputWasOperator = false;
   } else if (operators.includes(input)) {
     // Check if input is an operator
     if (!lastInputWasOperator) {
       // Avoid multiple operators in a row
+        if(expressionFieldValue == "0") {
+            expressionFieldValue = "";
+        }
+        
       expressionFieldValue += input;
       historyVal += input;
       lastInputWasOperator = true;
@@ -99,12 +101,9 @@ function clearExpression() {
 
   const lengthToRemove = expressionFieldValue.length;
 
-  // Remove the last value or operator from the history
-  if (expressionFieldValue.slice(0, 1) == "0") {
-    historyVal = historyVal.slice(0, -(lengthToRemove - 1));
-  } else {
-    historyVal = historyVal.slice(0, -(lengthToRemove + 1));
-  }
+  // Remove the last expression from the history
+    historyVal = historyVal.slice(0, -lengthToRemove);
+
   // Reset the expression field value and content
   expressionFieldValue = "0"; // Reset the expression field
   expressionField.innerText = expressionFieldValue; // Reset the expression field
