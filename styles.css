@@ -1,4 +1,3 @@
-/* styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,7 +37,7 @@
   --text-color: #ffffffd3;
   --btn-bg: #586e75;
   --btn-hover-bg: #455a63;
-  --action-btn-bg: #268bd2;
+  --action-btn-bg: #3879a7;
   --action-btn-hover-bg: #2aa198;
   --clear-all-bg: #dc322f;
   --clear-all-hover-bg: #cb4b16;
@@ -59,7 +58,7 @@
   --beam-color: rgba(150, 100, 200, 0.5);
 }
 
-/* Apply theme variables */
+/* Applying theme variables */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -77,12 +76,46 @@ body {
 }
 
 .beam:active {
-  /* Scale up effect when button is pressed */
   transform: scaleX(1.1);
-  transition: transform 0.1s ease; /* Quick scale-up transition */
+  transition: transform 0.1s ease;
 }
 
-/* Optional: Add a smooth return to original size */
+.doodle-alert {
+    position: absolute;
+    z-index: 200;
+    bottom: 5%;
+    left: 50%;
+    width: 15rem;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    animation: doodle 1s ease-in-out 0s 1;
+}
+
+@keyframes doodle {
+    0% {
+        transform: translateX(-50%) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
 @keyframes beam-animation {
   0% {
     transform: scaleX(1);

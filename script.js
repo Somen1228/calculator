@@ -173,7 +173,6 @@ backspace.addEventListener("click", handleBackspace);
 document.addEventListener("keydown", handleKeyDown);
 
 
-// script.js
 // Function to set the theme
 function setTheme(themeName) {
     document.documentElement.className = themeName;
@@ -193,14 +192,23 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     }
 });
 
-// Initialize with a default theme
+
 setTheme('light-theme');
 
-// Add to your existing script.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const themeButton = document.getElementById('theme-toggle');
-    
+    const doodleAlert = document.getElementById('doodle-alert');
+
+    doodleAlert.style.opacity = '1';
+    doodleAlert.style.visibility = 'visible';
+
+    // Hides the alert message after 5 seconds
+    setTimeout(() => {
+        doodleAlert.style.opacity = '0';
+        doodleAlert.style.visibility = 'hidden';
+    }, 5000);
+
     themeButton.addEventListener('touchstart', function() {
         this.classList.add('beam-animate');
     });
@@ -209,3 +217,5 @@ document.addEventListener('DOMContentLoaded', () => {
         this.classList.remove('beam-animate');
     });
 });
+
+

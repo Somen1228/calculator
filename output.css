@@ -1,6 +1,6 @@
-/* styles.css */
-
-/* ! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com */
+/*
+! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
+*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -568,6 +572,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-10 {
@@ -624,21 +632,6 @@ video {
 
 .max-w-\[20rem\] {
   max-width: 20rem;
-}
-
-.max-w-\[22rem\] {
-  max-width: 22rem;
-}
-
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-.animate-ping {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @keyframes pulse {
@@ -699,6 +692,10 @@ video {
   border-radius: 0.75rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -719,9 +716,9 @@ video {
   text-align: end;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-\[large\] {
@@ -798,7 +795,7 @@ video {
   --text-color: #ffffffd3;
   --btn-bg: #586e75;
   --btn-hover-bg: #455a63;
-  --action-btn-bg: #268bd2;
+  --action-btn-bg: #3879a7;
   --action-btn-hover-bg: #2aa198;
   --clear-all-bg: #dc322f;
   --clear-all-hover-bg: #cb4b16;
@@ -820,7 +817,7 @@ video {
   --beam-color: rgba(150, 100, 200, 0.5);
 }
 
-/* Apply theme variables */
+/* Applying theme variables */
 
 body {
   background-color: var(--bg-color);
@@ -839,13 +836,47 @@ body {
 }
 
 .beam:active {
-  /* Scale up effect when button is pressed */
   transform: scaleX(1.1);
   transition: transform 0.1s ease;
-  /* Quick scale-up transition */
 }
 
-/* Optional: Add a smooth return to original size */
+.doodle-alert {
+  position: absolute;
+  z-index: 200;
+  bottom: 5%;
+  left: 50%;
+  width: 15rem;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  animation: doodle 1s ease-in-out 0s 1;
+}
+
+@keyframes doodle {
+  0% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
 
 @keyframes beam-animation {
   0% {
@@ -970,16 +1001,4 @@ body {
 #eval-history::-webkit-scrollbar-track,
 #display::-webkit-scrollbar-track {
   background-color: var(--bg-color);
-}
-
-@media (min-width: 768px) {
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
 }
