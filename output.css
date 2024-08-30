@@ -586,10 +586,6 @@ video {
   height: 7rem;
 }
 
-.h-64 {
-  height: 16rem;
-}
-
 .h-\[100vh\] {
   height: 100vh;
 }
@@ -692,10 +688,6 @@ video {
   border-radius: 0.75rem;
 }
 
-.bg-transparent {
-  background-color: transparent;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
@@ -714,10 +706,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pl-5 {
-  padding-left: 1.25rem;
 }
 
 .text-end {
@@ -839,25 +827,15 @@ video {
 
 .barbie-theme {
   --bg-color: #fce4ec;
-  /* Light pink background */
   --calc-body-color: #f8bbd0;
-  /* Slightly darker pink for the calculator body */
   --text-color: #880e4f;
-  /* Dark pink text color */
   --btn-bg: #f48fb1;
-  /* Pink buttons */
   --btn-hover-bg: #f06292;
-  /* Darker pink on hover */
   --action-btn-bg: #ec407a;
-  /* Bright pink for action buttons */
   --action-btn-hover-bg: #d81b60;
-  /* Darker pink on hover */
   --clear-all-bg: #e91e63;
-  /* Vibrant pink for the "Clear All" button */
   --clear-all-hover-bg: #c2185b;
-  /* Darker pink on hover */
   --beam-color: rgba(255, 105, 180, 0.5);
-  /* Light pink beam color */
 }
 
 /* Applying theme variables */
@@ -870,6 +848,7 @@ body {
 .beam {
   width: 60%;
   height: 10px;
+  z-index: 300;
   background: var(--beam-color);
   border-radius: 10px;
   border: none;
@@ -883,14 +862,22 @@ body {
   transition: transform 0.1s ease;
 }
 
+/* Center the doodle-alert perfectly */
+
+#calculator {
+  position: relative;
+}
+
 .doodle-alert {
   position: absolute;
   z-index: 200;
-  bottom: 5%;
+  top: calc(
+    100% - 5rem
+  );
   left: 50%;
-  width: 15rem;
   transform: translateX(-50%);
-  color: #333;
+  width: 15rem;
+  color: var(--text-color);
   padding: 10px 20px;
   font-size: 12px;
   font-weight: bold;
@@ -898,6 +885,24 @@ body {
   visibility: hidden;
   transition: opacity 0.5s, visibility 0.5s;
   animation: doodle 1s ease-in-out 0s 1;
+}
+
+.doodle-alert img {
+  display: block;
+  margin: 0 auto;
+}
+
+.doodle-alert h3 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+  .doodle-alert {
+    width: 80%;
+    top: calc(100% - 6rem);
+    /* Adjust this for smaller screens */
+  }
 }
 
 @keyframes doodle {

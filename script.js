@@ -172,33 +172,47 @@ clearAll.addEventListener("click", clearAllData);
 backspace.addEventListener("click", handleBackspace);
 document.addEventListener("keydown", handleKeyDown);
 
-
-// Function to set the theme
+// Function to set the theme and save it to localStorage
 function setTheme(themeName) {
     document.documentElement.className = themeName;
+    localStorage.setItem('theme', themeName); // Save theme to localStorage
+}
+
+// Function to get the theme from localStorage
+function getStoredTheme() {
+    return localStorage.getItem('theme') || 'light-theme'; // Default to 'light-theme' if none is stored
 }
 
 // Event listener to toggle between themes
 document.getElementById('theme-toggle').addEventListener('click', function() {
     const currentTheme = document.documentElement.className;
-    if (currentTheme === 'light-theme') {
-        setTheme('dark-theme');
-    } else if (currentTheme === 'dark-theme') {
-        setTheme('solarized-theme');
-    } else if (currentTheme === 'solarized-theme') {
-        setTheme('beige-theme');
-    } else if (currentTheme === 'beige-theme') {
-        setTheme('barbie-theme');
-    } else {
-        setTheme('light-theme');
+    let newTheme;
+
+    switch (currentTheme) {
+        case 'light-theme':
+            newTheme = 'dark-theme';
+            break;
+        case 'dark-theme':
+            newTheme = 'solarized-theme';
+            break;
+        case 'solarized-theme':
+            newTheme = 'beige-theme';
+            break;
+        case 'beige-theme':
+            newTheme = 'barbie-theme';
+            break;
+        default:
+            newTheme = 'light-theme';
     }
+
+    setTheme(newTheme);
 });
 
-
-setTheme('light-theme');
-
-
+// Apply the stored theme on page load
 document.addEventListener('DOMContentLoaded', () => {
+    const storedTheme = getStoredTheme();
+    setTheme(storedTheme);
+
     const themeButton = document.getElementById('theme-toggle');
     const doodleAlert = document.getElementById('doodle-alert');
 
@@ -219,5 +233,4 @@ document.addEventListener('DOMContentLoaded', () => {
         this.classList.remove('beam-animate');
     });
 });
-
 
