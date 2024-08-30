@@ -33,7 +33,7 @@
 /* Solarized Theme */
 .solarized-theme {
   --bg-color: #002b36;
-  --calc-body-color: #073642;
+  --calc-body-color: #093e4b; 
   --text-color: #ffffffd3;
   --btn-bg: #586e75;
   --btn-hover-bg: #455a63;
@@ -44,10 +44,10 @@
   --beam-color: rgba(50, 100, 150, 0.5);
 }
 
-/* Custom Theme */
+/* Beige Theme */
 .beige-theme {
   --bg-color: #faf3dd;
-  --calc-body-color: #ffffff;
+  --calc-body-color: #f1e7c6;
   --text-color: #21343bc4;
   --btn-bg: #d3cbb8;
   --btn-hover-bg: #b9a793;
