@@ -92,6 +92,11 @@ function evaluateExpression() {
 }
 
 function clearExpression() {
+
+    if(expressionFieldValue == "0") {
+        return;
+    }
+
   const lengthToRemove = expressionFieldValue.length;
 
   // Remove the last value or operator from the history
