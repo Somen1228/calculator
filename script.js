@@ -110,6 +110,7 @@ function clearExpression() {
 
   // Update the history field with the updated history value
   historyField.innerText = historyVal;
+  lastInputWasOperator = false;
 }
 
 function clearAllData() {
@@ -170,3 +171,41 @@ clear.addEventListener("click", clearExpression);
 clearAll.addEventListener("click", clearAllData);
 backspace.addEventListener("click", handleBackspace);
 document.addEventListener("keydown", handleKeyDown);
+
+
+// script.js
+// Function to set the theme
+function setTheme(themeName) {
+    document.documentElement.className = themeName;
+}
+
+// Event listener to toggle between themes
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const currentTheme = document.documentElement.className;
+    if (currentTheme === 'light-theme') {
+        setTheme('dark-theme');
+    } else if (currentTheme === 'dark-theme') {
+        setTheme('solarized-theme');
+    } else if (currentTheme === 'solarized-theme') {
+        setTheme('beige-theme');
+    } else {
+        setTheme('light-theme');
+    }
+});
+
+// Initialize with a default theme
+setTheme('light-theme');
+
+// Add to your existing script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeButton = document.getElementById('theme-toggle');
+    
+    themeButton.addEventListener('touchstart', function() {
+        this.classList.add('beam-animate');
+    });
+
+    themeButton.addEventListener('animationend', function() {
+        this.classList.remove('beam-animate');
+    });
+});
