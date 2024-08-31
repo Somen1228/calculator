@@ -771,6 +771,12 @@ video {
   opacity: 0.6;
 }
 
+.shadow-bottom-left {
+  --tw-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+  --tw-shadow-colored: -10px 10px 10px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 /* Light Theme */
 
 .light-theme {

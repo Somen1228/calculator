@@ -193,6 +193,9 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
             newTheme = 'dark-theme';
             break;
         case 'dark-theme':
+            newTheme = 'solarized-theme';
+            break;
+        case 'solarized-theme':
             newTheme = 'light-theme';
             break;
         case 'light-theme':
