@@ -180,7 +180,7 @@ function setTheme(themeName) {
 
 // Function to get the theme from localStorage
 function getStoredTheme() {
-    return localStorage.getItem('theme') || 'light-theme'; // Default to 'light-theme' if none is stored
+    return localStorage.getItem('theme') || 'dark-theme'; // Default to 'light-theme' if none is stored
 }
 
 // Event listener to toggle between themes
@@ -189,13 +189,13 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     let newTheme;
 
     switch (currentTheme) {
-        case 'light-theme':
+        case 'barbie-theme':
             newTheme = 'dark-theme';
             break;
         case 'dark-theme':
-            newTheme = 'solarized-theme';
+            newTheme = 'light-theme';
             break;
-        case 'solarized-theme':
+        case 'light-theme':
             newTheme = 'beige-theme';
             break;
         case 'beige-theme':

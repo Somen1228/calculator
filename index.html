@@ -1,92 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="output.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div
-      id="calculator"
-      class="w-full h-[100vh] flex flex-col justify-center items-center justify-items-center"
-    >
-      <div
-        id="calc-body"
-        class="w-[90%] max-w-[20rem] h-[80%] max-h-[32rem] pt-5 flex flex-col gap-5 items-center rounded-xl shadow-bottom-left z-10"
-      >
-        <div class="h-28 w-[90%] max-w-[20rem] flex flex-col">
-          <h3
-            id="eval-history"
-            class="h-[30%] pt-2 pr-2 w-full text-sm text-end font-medium opacity-60 overflow-x-scroll tracking-wider"
-          ></h3>
-          <h3 id="display" class="h-[70%] pt-5 pl-2 w-full font-bold text-5xl">
-            0
-          </h3>
-        </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="output.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
         <div
-          class="h-10 w-[90%] max-w-[20rem] flex justify-end items-end pt-2 pr-2"
-        >
-          <h3 id="expression" class="font-semibold text-lg">0</h3>
+            id="calculator"
+            class="w-full h-[100vh] flex flex-col justify-center items-center justify-items-center">
+            <div
+                id="calc-body"
+                class="w-[90%] max-w-[20rem] h-[80%] max-h-[32rem] pt-5 flex flex-col gap-5 items-center rounded-xl shadow-bottom-left z-10">
+                <div class="h-28 w-[90%] max-w-[20rem] flex flex-col">
+                    <h3
+                        id="eval-history"
+                        class="h-[30%] pt-2 pr-2 w-full text-sm text-end font-medium opacity-60 overflow-x-scroll tracking-wider"></h3>
+                    <h3 id="display"
+                        class="h-[70%] pt-5 pl-2 w-full font-bold text-5xl">
+                        0
+                    </h3>
+                </div>
+                <div
+                    class="h-10 w-[90%] max-w-[20rem] flex justify-end items-end pt-2 pr-2">
+                    <h3 id="expression" class="font-semibold text-lg">0</h3>
+                </div>
+                <div
+                    class="btns-area h-[57%] p-2 w-[100%] max-w-[20rem] md:h-76 grid grid-cols-4 gap-2 items-center justify-items-center">
+                    <button
+                        class="w-full h-full rounded-[5px] text-[large] font-[600] clear-all">
+                        CE
+                    </button>
+                    <button class="func-btn clear">C</button>
+                    <button class="action-btn backspace">
+                        <i class="fa-solid fa-delete-left"></i>
+                    </button>
+                    <button class="buttons action-btn division">/</button>
+                    <button class="buttons numbers seven">7</button>
+                    <button class="buttons numbers eight">8</button>
+                    <button class="buttons numbers nine">9</button>
+                    <button class="buttons action-btn multiply">*</button>
+                    <button class="buttons numbers four">4</button>
+                    <button class="buttons numbers five">5</button>
+                    <button class="buttons numbers six">6</button>
+                    <button class="buttons action-btn subtract">-</button>
+                    <button class="buttons numbers one">1</button>
+                    <button class="buttons numbers two">2</button>
+                    <button class="buttons numbers three">3</button>
+                    <button class="buttons action-btn add">+</button>
+                    <button class="buttons numbers zero">0</button>
+                    <button class="buttons decimal">.</button>
+                    <button class="func-btn equals">=</button>
+                </div>
+                <div
+                    id="theme-switcher"
+                    class="w-full flex flex-col items-center justify-center align-middle mt-2">
+                    <button id="theme-toggle"
+                        class="beam animate-custom-bounce"></button>
+                </div>
+            </div>
         </div>
-        <div
-          class="btns-area h-[57%] p-2 w-[100%] max-w-[20rem] md:h-76 grid grid-cols-4 gap-2 items-center justify-items-center"
-        >
-          <button
-            class="w-full h-full rounded-[5px] text-[large] font-[600] clear-all"
-          >
-            CE
-          </button>
-          <button class="func-btn clear">C</button>
-          <button class="action-btn backspace">
-            <i class="fa-solid fa-delete-left"></i>
-          </button>
-          <button class="buttons action-btn division">/</button>
-          <button class="buttons numbers seven">7</button>
-          <button class="buttons numbers eight">8</button>
-          <button class="buttons numbers nine">9</button>
-          <button class="buttons action-btn multiply">*</button>
-          <button class="buttons numbers four">4</button>
-          <button class="buttons numbers five">5</button>
-          <button class="buttons numbers six">6</button>
-          <button class="buttons action-btn subtract">-</button>
-          <button class="buttons numbers one">1</button>
-          <button class="buttons numbers two">2</button>
-          <button class="buttons numbers three">3</button>
-          <button class="buttons action-btn add">+</button>
-          <button class="buttons numbers zero">0</button>
-          <button class="buttons decimal">.</button>
-          <button class="func-btn equals">=</button>
-        </div>
-        <div
-          id="theme-switcher"
-          class="w-full flex flex-col items-center justify-center align-middle mt-2"
-        >
-          <button id="theme-toggle" class="beam animate-pulse"></button>
-        </div>
-      </div>
-      <div
-        id="doodle-alert"
-        class="doodle-alert flex flex-col justify-center items-center"
-      >
-        <img
-          id="svg-icon"
-          width="20px"
-          height="20px"
-          src="./assets/arrow.svg"
-          alt="Doodle Arrow"
-        />
-        <h3>Tap the beam to switch themes</h3>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+        <script src="script.js"></script>
+    </body>
 </html>
